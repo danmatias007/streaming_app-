@@ -1,0 +1,40 @@
+{
+  "name": "@netflix/web-bff",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/server.js",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "db:migrate": "npm run build && node dist/db/migrate.js",
+    "db:seed": "npm run build && node dist/db/seed.js"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.1115.0",
+    "@netflix/shared-types": "*",
+    "cookie": "^1.0.2",
+    "dotenv": "^17.2.0",
+    "express": "^5.1.0",
+    "jose": "^6.1.0",
+    "multer": "^2.2.0",
+    "nodemailer": "^9.0.5",
+    "pg": "^8.16.0",
+    "stripe": "^22.5.0"
+  },
+  "devDependencies": {
+    "@types/cookie": "^0.6.0",
+    "@types/express": "^5.0.0",
+    "@types/multer": "^2.2.0",
+    "@types/node": "^24.0.0",
+    "@types/nodemailer": "^7.0.0",
+    "@types/pg": "^8.15.0",
+    "@types/supertest": "^6.0.0",
+    "supertest": "^7.1.0",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0",
+    "vitest": "^5.0.2"
+  }
+}

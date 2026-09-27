@@ -1,0 +1,28 @@
+{
+  "name": "netflix-web-monorepo",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "frontend",
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces --if-present",
+    "dev:bff": "npm run dev --workspace @netflix/web-bff",
+    "dev:frontend": "npm run dev --workspace @netflix/frontend",
+    "db:migrate": "npm run db:migrate --workspace @netflix/web-bff",
+    "db:seed": "npm run db:seed --workspace @netflix/web-bff",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "test:frontend": "npm run test --workspace @netflix/frontend",
+    "test:e2e": "npm run test:e2e --workspace @netflix/frontend",
+    "quality": "npm run typecheck && npm run test && npm run test:e2e && npm run build"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.29.0"
+  }
+}
